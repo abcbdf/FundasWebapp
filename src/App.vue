@@ -2,9 +2,12 @@
   <v-app>
     <Navbar />
     <v-main>
-      <v-container fluid fill-height class = "pa-10 blue darken-3">
+      <v-container fluid fill-height class = "pa-10 blue darken-3 flex-column">
         <ProgressBar maxStep=3 :currentStep="currentStep" :key="currentStep" />
+        <v-spacer></v-spacer>
         <router-view></router-view>
+        <v-spacer></v-spacer>
+
       </v-container>
     </v-main>
   </v-app>
