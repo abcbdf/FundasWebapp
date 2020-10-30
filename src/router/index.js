@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import ImageTaken from '../views/ImageTaken.vue'
 import ImageStitch from '../views/ImageStitch.vue'
+import FinalImage from "../views/FinalImage.vue"
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/ImageStitch',
     name: 'ImageStitch',
     component: ImageStitch
+  },
+  {
+    path: '/FinalImage',
+    name: 'FinalImage',
+    component: FinalImage
   },
   {
     path: '/about',
