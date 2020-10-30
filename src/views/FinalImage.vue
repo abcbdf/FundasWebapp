@@ -3,7 +3,7 @@
         <v-row>
             <v-col cols = "12" class="d-flex flex-column justify-space-between align-center">
                 <div class="title white--text">
-                    The image taken from bottom
+                    Final Image
                 </div>
                 <v-img src="/FoveaCenter.jpg" :width="width">
                 </v-img>
