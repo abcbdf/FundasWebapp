@@ -36,9 +36,11 @@
     <v-row class="d-flex justify-space-around mb-6">
       <v-btn
         color="white"
-        class="ma-2 blue--text"
+        class="ma-2 blue--text rounded-xl"
         to="/ImageTaken"
-        x-large
+        height = "100"
+        width = "500"
+        
       >
         <v-icon
           left
