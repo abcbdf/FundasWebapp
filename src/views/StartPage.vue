@@ -7,20 +7,20 @@
       <v-col cols="6">
         <v-row >
           <v-col class="text-subtitle-1 white--text">
-            <v-checkbox color="white">
+            <v-switch color="white" inset>
               <template v-slot:label>
                 <span class="white--text">Guide Circle</span>
               </template>
-            </v-checkbox>
+            </v-switch>
           </v-col>
         </v-row>
         <v-row >
           <v-col class="text-subtitle-1 white--text">
-            <v-checkbox color="white">
+            <v-switch color="white" inset>
               <template v-slot:label>
                 <span class="white--text">Sample Image</span>
               </template>
-            </v-checkbox>
+            </v-switch>
           </v-col>
         </v-row>
       </v-col>
@@ -39,8 +39,7 @@
         class="ma-2 blue--text rounded-xl"
         to="/ImageTaken"
         height = "100"
-        width = "500"
-        
+        block
       >
         <v-icon
           left
@@ -54,6 +53,10 @@
     </v-row>
   </v-container>
 </template>
+
+<style>
+
+</style>
 
 <script>
 // @ is an alias to /src

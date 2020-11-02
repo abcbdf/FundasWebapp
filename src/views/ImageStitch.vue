@@ -39,7 +39,7 @@
                 </v-img>
             </v-col>
             <v-col cols = "4" class="d-flex flex-column justify-end align-center">
-                <v-btn size="100" color="white" class="blue--text" to="/FinalImage">
+                <v-btn width="100%" color="white" class="blue--text text--darken-4 text-none rounded-pill pa-1" x-large to="/FinalImage">
                     Stitch Image
                 </v-btn>
             </v-col>

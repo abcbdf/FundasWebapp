@@ -2,7 +2,7 @@
   <v-app>
     <Navbar />
     <v-main>
-      <v-container fluid fill-height class = "pa-10 blue darken-3 flex-column">
+      <v-container fluid fill-height class = "pa-10 blue darken-4 flex-column">
         <ProgressBar maxStep=3 :currentStep="currentStep" :key="currentStep" />
         <v-spacer></v-spacer>
         <router-view></router-view>
@@ -23,7 +23,10 @@ export default {
   name: 'App',
 
   data: () => ({
-    currentStep: 0
+    currentStep: 0,
+    // pageInfo: {
+    //   StartPage: {theme: "dark", }
+    // }
   }),
   // computed: {
   //   currentStep(){
@@ -33,7 +36,7 @@ export default {
   // }
   watch: {
     '$route' (to, from) {
-      if (to.name === "Home")
+      if (to.name === "StartPage")
       {
         this.currentStep = 0;
       }

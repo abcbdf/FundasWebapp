@@ -5,14 +5,15 @@ import ImageTaken from '../views/ImageTaken.vue'
 import ImageStitch from '../views/ImageStitch.vue'
 import FinalImage from "../views/FinalImage.vue"
 import Verify from "../views/Verify.vue"
+import StartPage from "@/views/StartPage"
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'StartPage',
+    component: StartPage
   },
   {
     path: '/ImageTaken',

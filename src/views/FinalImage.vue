@@ -7,7 +7,7 @@
                 </div>
                 <v-img src="/FoveaCenter.jpg" :width="width">
                 </v-img>
-                <v-btn size="100" color="white" class="blue--text" to="/">
+                <v-btn width="30%" color="white" class="blue--text text--darken-4 text-none rounded-pill pa-1" to="/">
                    Save the image
                 </v-btn>
             </v-col>
