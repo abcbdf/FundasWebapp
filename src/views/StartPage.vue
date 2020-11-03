@@ -37,7 +37,7 @@
       <v-btn
         color="white"
         class="ma-2 blue--text rounded-xl"
-        to="/ImageTaken"
+        to="/ImageTakenPage"
         height = "100"
         block
       >

@@ -1,39 +1,51 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import ImageTaken from '../views/ImageTaken.vue'
-import ImageStitch from '../views/ImageStitch.vue'
-import FinalImage from "../views/FinalImage.vue"
-import Verify from "../views/Verify.vue"
+import ImageTakenPage from '../views/ImageTakenPage.vue'
+import ImageStitchPage from '../views/ImageStitchPage.vue'
+import SavePage from "../views/SavePage.vue"
+import VerifyPage from "../views/VerifyPage.vue"
 import StartPage from "@/views/StartPage"
+import ChooseEyePage from "@/views/ChooseEyePage"
+import TurnOffLightPage from "@/views/TurnOffLightPage";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/StartPage',
     name: 'StartPage',
-    component: StartPage
+    component: StartPage,
   },
   {
-    path: '/ImageTaken',
-    name: 'ImageTaken',
-    component: ImageTaken
+    path: '/ImageTakenPage',
+    name: 'ImageTakenPage',
+    component: ImageTakenPage
   },
   {
-    path: '/ImageStitch',
-    name: 'ImageStitch',
-    component: ImageStitch
+    path: '/ImageStitchPage',
+    name: 'ImageStitchPage',
+    component: ImageStitchPage
   },
   {
-    path: '/FinalImage',
-    name: 'FinalImage',
-    component: FinalImage
+    path: '/SavePage',
+    name: 'SavePage',
+    component: SavePage
   },
   {
-    path: '/Verify',
-    name: 'Verify',
-    component: Verify
+    path: '/',
+    name: 'VerifyPage',
+    component: VerifyPage
+  },
+  {
+    path: '/ChooseEyePage',
+    name: 'ChooseEyePage',
+    component: ChooseEyePage
+  },
+  {
+    path: '/TurnOffLightPage',
+    name: 'TurnOffLightPage',
+    component: TurnOffLightPage
   },
   {
     path: '/about',

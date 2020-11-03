@@ -14,7 +14,7 @@
                         mdi-check-circle-outline
                     </v-icon>
                 </div>
-                <v-btn color="white" class="blue--text rounded-xl" to="/ImageStitch" width="100%">
+                <v-btn color="white" class="blue--text rounded-xl" to="/ImageStitchPage" width="100%">
                     Next Step
                 </v-btn>
             </v-col>
