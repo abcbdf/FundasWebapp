@@ -37,7 +37,7 @@
       <v-btn
         color="white"
         class="ma-2 blue--text rounded-xl"
-        to="/ImageTakenPage"
+        @click="nextPage"
         height = "100"
         block
       >
@@ -59,9 +59,12 @@
 </style>
 
 <script>
-// @ is an alias to /src
 
 export default {
-
+  methods:{
+    nextPage(){
+      this.$controller.nextPage();
+    }
+  }
 }
 </script>

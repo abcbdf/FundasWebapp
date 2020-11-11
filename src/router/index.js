@@ -8,6 +8,7 @@ import VerifyPage from "../views/VerifyPage.vue"
 import StartPage from "@/views/StartPage"
 import ChooseEyePage from "@/views/ChooseEyePage"
 import TurnOffLightPage from "@/views/TurnOffLightPage";
+import App from "@/App.vue";
 
 Vue.use(VueRouter)
 
@@ -35,7 +36,8 @@ const routes = [
   {
     path: '/',
     name: 'VerifyPage',
-    component: VerifyPage
+    component: VerifyPage,
+    alias: "/VerifyPage",
   },
   {
     path: '/ChooseEyePage',

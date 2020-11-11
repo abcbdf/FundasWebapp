@@ -42,7 +42,7 @@
             </svg>
           </v-col>
         </v-row>
-        <v-btn color="blue" class="ma-2 white--text rounded-xl text-none "  width="30%" to="/TurnOffLightPage">
+        <v-btn color="blue" class="ma-2 white--text rounded-xl text-none "  width="30%" @click="nextPage">
           Next
         </v-btn>
         
@@ -54,6 +54,10 @@
 <script>
 
 export default {
-  
+  methods:{
+    nextPage(){
+      this.$controller.nextPage();
+    }
+  }
 }
 </script>

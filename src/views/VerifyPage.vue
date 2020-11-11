@@ -39,7 +39,7 @@
           </v-simple-table>
         </div>
 
-        <v-btn color="blue" class="ma-2 white--text rounded-xl text-none " width="100%" to="/ChooseEyePage">
+        <v-btn color="blue" class="ma-2 white--text rounded-xl text-none " width="100%" @click="nextPage">
           Confirm
         </v-btn>
       </v-col>
@@ -50,58 +50,64 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        patientInfos: [
-          {
-            type: 'Full name',
-            value: 'Karen Smith',
-          },
-          {
-            type: 'Medical Record No.',
-            value: 'U2939849',
-          },
-          {
-            type: 'Insurance',
-            value: 'LifeWise',
-          },
-          {
-            type: 'Date of Birth',
-            value: 'Jul 26th, 1995',
-          },
-          {
-            type: 'Phone',
-            value: '(206)-222-333',
-          },
-          {
-            type: 'Address',
-            value: '234 12th Ave NE, WA 98123',
-          },
-          {
-            type: 'Country',
-            value: 'United States',
-          },
-        ],
-        reservationInfos: [
-          {
-            type: 'Study ID',
-            value: '123456',
-          },
-          {
-            type: 'Date',
-            value: 'Wednesday, Oct 21st',
-          },
-          {
-            type: 'Time',
-            value: '10:30 AM',
-          },
-          {
-            type: 'Note',
-            value: 'Has diabetes.',
-          },
-        ],
-      }
-    },
+
+export default {
+  data () {
+    return {
+      patientInfos: [
+        {
+          type: 'Full name',
+          value: 'Karen Smith',
+        },
+        {
+          type: 'Medical Record No.',
+          value: 'U2939849',
+        },
+        {
+          type: 'Insurance',
+          value: 'LifeWise',
+        },
+        {
+          type: 'Date of Birth',
+          value: 'Jul 26th, 1995',
+        },
+        {
+          type: 'Phone',
+          value: '(206)-222-333',
+        },
+        {
+          type: 'Address',
+          value: '234 12th Ave NE, WA 98123',
+        },
+        {
+          type: 'Country',
+          value: 'United States',
+        },
+      ],
+      reservationInfos: [
+        {
+          type: 'Study ID',
+          value: '123456',
+        },
+        {
+          type: 'Date',
+          value: 'Wednesday, Oct 21st',
+        },
+        {
+          type: 'Time',
+          value: '10:30 AM',
+        },
+        {
+          type: 'Note',
+          value: 'Has diabetes.',
+        },
+      ],
+    }
+  },
+  methods:{
+    nextPage(){
+      this.$controller.nextPage();
+    }
   }
+}
 </script>

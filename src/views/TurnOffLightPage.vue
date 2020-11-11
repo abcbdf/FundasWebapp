@@ -9,7 +9,7 @@
         </div>
         
     </div>
-    <v-btn color="blue" class="ma-2 white--text rounded-xl text-none text-h5" width="30%" height="50" to="/StartPage">
+    <v-btn color="blue" class="ma-2 white--text rounded-xl text-none text-h5" width="30%" height="50" @click="nextPage">
       Start
     </v-btn>
   </div>
@@ -18,6 +18,10 @@
 <script>
 
 export default {
-  
+  methods:{
+    nextPage(){
+      this.$controller.nextPage();
+    }
+  }
 }
 </script>
