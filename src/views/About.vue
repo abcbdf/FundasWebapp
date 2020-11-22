@@ -1,6 +1,7 @@
 <template>
-  <div class="about primary" style="height: 100%; width: 100%">
+  <div class="about" style="height: 100%; width: 100%">
     <ProgressBar/>
+    <h> hhh </h>
   </div>
   
 

@@ -1,54 +1,71 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import ImageTakenPage from '../views/ImageTakenPage.vue'
-import ImageStitchPage from '../views/ImageStitchPage.vue'
-import SavePage from "../views/SavePage.vue"
-import VerifyPage from "../views/VerifyPage.vue"
-import StartPage from "@/views/StartPage"
-import ChooseEyePage from "@/views/ChooseEyePage"
-import TurnOffLightPage from "@/views/TurnOffLightPage";
-import App from "@/App.vue";
+import ImageTakenPage from '@/views/TakeImage/ImageTakenPage.vue';
+import ImageStitchPage from '@/views/TakeImage/ImageStitchPage.vue';
+import SavePage from "@/views/TakeImage/SavePage.vue";
+import VerifyPage from "@/views/TakeImage/VerifyPage.vue";
+import StartPage from "@/views/TakeImage/StartPage";
+import ChooseEyePage from "@/views/TakeImage/ChooseEyePage";
+import TurnOffLightPage from "@/views/TakeImage/TurnOffLightPage";
+import TakeImageTemplate from "@/views/TakeImage/TakeImageTemplate";
+import UploadImagePage from "@/views/UploadImagePage";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/StartPage',
-    name: 'StartPage',
-    component: StartPage,
-  },
-  {
-    path: '/ImageTakenPage',
-    name: 'ImageTakenPage',
-    component: ImageTakenPage
-  },
-  {
-    path: '/ImageStitchPage',
-    name: 'ImageStitchPage',
-    component: ImageStitchPage
-  },
-  {
-    path: '/SavePage',
-    name: 'SavePage',
-    component: SavePage
-  },
-  {
     path: '/',
-    name: 'VerifyPage',
-    component: VerifyPage,
-    alias: "/VerifyPage",
+    redirect: '/TakeImage/VerifyPage',
   },
   {
-    path: '/ChooseEyePage',
-    name: 'ChooseEyePage',
-    component: ChooseEyePage
+    path: '/UploadImage',
+    name: 'UploadImage',
+    component: UploadImagePage,
   },
   {
-    path: '/TurnOffLightPage',
-    name: 'TurnOffLightPage',
-    component: TurnOffLightPage
+    path: '/TakeImage',
+    name: 'TakeImage',
+    component: TakeImageTemplate,
+    children: [
+      {
+        path: 'StartPage',
+        name: 'StartPage',
+        component: StartPage,
+      },
+      {
+        path: 'ImageTakenPage',
+        name: 'ImageTakenPage',
+        component: ImageTakenPage
+      },
+      {
+        path: 'ImageStitchPage',
+        name: 'ImageStitchPage',
+        component: ImageStitchPage
+      },
+      {
+        path: 'SavePage',
+        name: 'SavePage',
+        component: SavePage
+      },
+      {
+        path: 'VerifyPage',
+        name: 'VerifyPage',
+        component: VerifyPage,
+      },
+      {
+        path: 'ChooseEyePage',
+        name: 'ChooseEyePage',
+        component: ChooseEyePage
+      },
+      {
+        path: 'TurnOffLightPage',
+        name: 'TurnOffLightPage',
+        component: TurnOffLightPage
+      },
+    ]
   },
+
+  
   {
     path: '/about',
     name: 'About',

@@ -3,10 +3,13 @@
     <v-row>
       <v-col cols = "8" class="d-flex flex-column justify-space-between align-center">
         <div class="title white--text">
-          The image taken from {{direction}}
+          The image taken from {{direction}} 
+          <v-btn color="white" fab small class="blue--text rounded-xl" @click="() => {componentKey += 1;}">
+            <v-icon>mdi-refresh</v-icon>
+          </v-btn>
         </div>
-        <v-img src="/FoveaCenter.jpg" :width="width">
-        </v-img>
+        <v-img :src="serverUrl+direction+'.jpg?rnd='+componentKey" transition="fade-transition"/>
+        
       </v-col>
       <v-col cols = "4" class="d-flex flex-column justify-space-around align-center">
         <div>
@@ -22,11 +25,18 @@
   </v-container>
 </template>
 
+<style scoped>
+
+</style>
+
 <script>
+import controller from '@/utils/Controller.js';
 
 export default {
   data: () => ({
     width: 600,
+    componentKey: 0,
+    serverUrl: controller.serverUrl,
   }),
   computed: {
     direction(){
@@ -38,6 +48,9 @@ export default {
     nextPage(){
       this.$controller.nextPage();
     }
-  }
+  },
+  // created() {
+  //   this.timer = setInterval(() => {this.componentKey += 1;}, 1000);
+  // }
 }
 </script>

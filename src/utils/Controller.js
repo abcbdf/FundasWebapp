@@ -63,6 +63,7 @@ import Vue from 'vue';
 const controller = new Vue({
   data () {
     return {
+      serverUrl: "http://localhost:3000/public/",
       pageInfo: {
         StartPage: {theme: "dark"},
         ImageTakenPage: {theme: "dark"},
@@ -100,7 +101,7 @@ const controller = new Vue({
     {
       this.currentNum += 1;
       this.currentNum = this.currentNum % this.stateMachine.length;
-      router.push(this.stateMachine[this.currentNum].pageName);
+      router.push({name: this.stateMachine[this.currentNum].pageName});
       
       this.updateInfo();
 
