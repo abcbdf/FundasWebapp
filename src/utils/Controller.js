@@ -77,21 +77,21 @@ const controller = new Vue({
         {pageName: "VerifyPage"},
         {pageName: "ChooseEyePage"},
         {pageName: "TurnOffLightPage"},
-        {pageName: "StartPage", label: "Take the image from left"},
-        {pageName: "ImageTakenPage", label: "Take the image from left"},
-        {pageName: "StartPage", label: "Take the image from right"},
-        {pageName: "ImageTakenPage", label: "Take the image from right"},
-        {pageName: "StartPage", label: "Take the image from bottom"},
-        {pageName: "ImageTakenPage", label: "Take the image from bottom"},
-        {pageName: "StartPage", label: "Take the image from top"},
-        {pageName: "ImageTakenPage", label: "Take the image from top"},
-        {pageName: "StartPage", label: "Take the image from center"},
-        {pageName: "ImageTakenPage", label: "Take the image from center"},
-        {pageName: "ImageStitchPage", label: "Stitch images"},
-        {pageName: "SavePage", label: "All done"},
+        {pageName: "StartPage", label: "Take the image from left", step: 0},
+        {pageName: "ImageTakenPage", label: "Take the image from left", step: 0},
+        {pageName: "StartPage", label: "Take the image from right", step: 1},
+        {pageName: "ImageTakenPage", label: "Take the image from right", step: 1},
+        {pageName: "StartPage", label: "Take the image from bottom", step: 2},
+        {pageName: "ImageTakenPage", label: "Take the image from bottom", step: 2},
+        {pageName: "StartPage", label: "Take the image from top", step: 3},
+        {pageName: "ImageTakenPage", label: "Take the image from top", step: 3},
+        {pageName: "StartPage", label: "Take the image from center", step: 4},
+        {pageName: "ImageTakenPage", label: "Take the image from center", step: 4},
+        {pageName: "ImageStitchPage", label: "Stitch images", step: 5},
+        {pageName: "SavePage", label: "All done", step: 6},
       ],
       currentNum: 0,
-      progressBarMaxStep: 0,
+      progressBarMaxStep: 7,
       progressBarCurrentStep: 1,
       progressBarLabel: "",
     }
@@ -99,6 +99,10 @@ const controller = new Vue({
   methods:{
     nextPage()
     {
+      if (router.history.current.name == "VerifyPage")
+      {
+        this.currentNum = 0;
+      }
       this.currentNum += 1;
       this.currentNum = this.currentNum % this.stateMachine.length;
       router.push({name: this.stateMachine[this.currentNum].pageName});
@@ -114,8 +118,9 @@ const controller = new Vue({
       {
         this.app.color = "blue darken-4";
         this.app.showProgressBar = true;
-        this.progressBarMaxStep = 7;
-        this.progressBarCurrentStep = Math.floor((this.currentNum - 3) / 2) + Math.floor(this.currentNum / 14);
+        // this.progressBarMaxStep = 7;
+        // this.progressBarCurrentStep = Math.floor((this.currentNum - 3) / 2) + Math.floor(this.currentNum / 14);
+        this.progressBarCurrentStep = this.stateMachine[this.currentNum].step;
         this.progressBarLabel = this.stateMachine[this.currentNum].label;
         // console.log("controller: " + this.progressBarLabel);
       }

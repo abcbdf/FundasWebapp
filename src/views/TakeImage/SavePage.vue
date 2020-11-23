@@ -10,7 +10,7 @@
         </div>
         <v-img :src="serverUrl + 'stitch.jpg?rnd='+componentKey">
         </v-img>
-        <v-btn width="30%" color="white" class="blue--text text--darken-4 text-none rounded-pill pa-1" @click="nextPage">
+        <v-btn width="30%" color="white" class="blue--text text--darken-4 text-none rounded-pill pa-1" to="/">
           Save the image
         </v-btn>
       </v-col>

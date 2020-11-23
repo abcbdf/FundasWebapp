@@ -34,21 +34,11 @@
       </v-col>
     </v-row>
     <v-row class="d-flex justify-space-around mb-6">
-      <v-btn
-        color="white"
-        class="ma-2 blue--text rounded-xl"
-        @click="nextPage"
-        height = "100"
-        block
-      >
-        <v-icon
-          left
-          dark
-        >
+      <v-btn color="white" class="ma-2 blue--text rounded-xl text-none" @click="nextPage" height = "100" block>
+        <v-icon left dark>
           mdi-camera
         </v-icon>
         Take an image
-        
       </v-btn>
     </v-row>
   </v-container>

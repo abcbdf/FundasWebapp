@@ -9,18 +9,24 @@ import ChooseEyePage from "@/views/TakeImage/ChooseEyePage";
 import TurnOffLightPage from "@/views/TakeImage/TurnOffLightPage";
 import TakeImageTemplate from "@/views/TakeImage/TakeImageTemplate";
 import UploadImagePage from "@/views/UploadImagePage";
+import DashboardPage from "@/views/DashboardPage";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    redirect: '/TakeImage/VerifyPage',
+    redirect: '/Dashboard',
   },
   {
     path: '/UploadImage',
     name: 'UploadImage',
     component: UploadImagePage,
+  },
+  {
+    path: '/Dashboard',
+    name: 'Dashboard',
+    component: DashboardPage,
   },
   {
     path: '/TakeImage',
