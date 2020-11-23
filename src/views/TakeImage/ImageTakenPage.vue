@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols = "8" class="d-flex flex-column justify-space-between align-center">
         <div class="title white--text">
-          The image taken from {{direction}} 
+          Click button to refresh
           <v-btn color="white" fab small class="blue--text rounded-xl" @click="() => {componentKey += 1;}">
             <v-icon>mdi-refresh</v-icon>
           </v-btn>

@@ -6,7 +6,7 @@
           <v-img src="/MicrosoftLogo.png" width="50"/>
           <div class="white--text text-body-1"> Direct </div>
         </v-card>
-        <v-card class="transparent elevation-0 d-flex flex-column justify-center align-center" v-for="link in links" :key="link.text">
+        <v-card class="transparent elevation-0 d-flex flex-column justify-center align-center" v-for="link in links" :key="link.text" color="white" >
           <v-icon color="secondary" large>{{link.icon}}</v-icon>
           <div class="secondary--text text-body-2"> {{link.text}} </div>
         </v-card>
@@ -49,6 +49,12 @@ export default {
       { icon: 'mdi-cog', text: 'Settings'},
       { icon: 'mdi-logout', text: 'Logout'},
     ]
+    }
+  },
+  methods: {
+    mouseover()
+    {
+      console.log("hh");
     }
   }
 }
