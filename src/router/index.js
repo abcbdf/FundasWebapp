@@ -10,6 +10,8 @@ import TurnOffLightPage from "@/views/TakeImage/TurnOffLightPage";
 import TakeImageTemplate from "@/views/TakeImage/TakeImageTemplate";
 import UploadImagePage from "@/views/UploadImagePage";
 import DashboardPage from "@/views/DashboardPage";
+import TrainingTemplate from "@/views/Training/TrainingTemplate";
+import TrainSlidePage from "@/views/Training/TrainSlidePage";
 
 Vue.use(VueRouter)
 
@@ -27,6 +29,18 @@ const routes = [
     path: '/Dashboard',
     name: 'Dashboard',
     component: DashboardPage,
+  },
+  {
+    path: '/Train',
+    name: 'Train',
+    component: TrainingTemplate,
+    children: [
+      {
+        path: 'TrainSlide',
+        name: "TrainSlide",
+        component: TrainSlidePage,
+      }
+    ] 
   },
   {
     path: '/TakeImage',

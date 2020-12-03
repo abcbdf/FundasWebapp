@@ -6,9 +6,14 @@
           <v-img src="/MicrosoftLogo.png" width="50"/>
           <div class="white--text text-body-1"> Direct </div>
         </v-card>
-        <v-card class="transparent elevation-0 d-flex flex-column justify-center align-center" v-for="link in links" :key="link.text" color="white" >
-          <v-icon color="secondary" large>{{link.icon}}</v-icon>
-          <div class="secondary--text text-body-2"> {{link.text}} </div>
+        <v-card class="transparent elevation-0 d-flex flex-column justify-center align-center" v-for="link in links" :key="link.text" color="white" style="height: 100%;">
+          <v-btn block class="transparent text-none" :to="link.to">
+            <div  class="d-flex flex-column justify-center align-center">
+              <v-icon color="secondary" large>{{link.icon}}</v-icon>
+              <div class="secondary--text text-body-2"> {{link.text}} </div>
+            </div>
+          </v-btn>
+          
         </v-card>
 
         <!-- <v-card class="transparent elevation-0 d-flex flex-column justify-center align-center">
@@ -44,7 +49,7 @@ export default {
       { icon: 'mdi-monitor-dashboard', text: 'Dashboard'},
       { icon: 'mdi-help-circle', text: 'Introductions'},
       { icon: 'mdi-chart-pie', text: 'Data Collection'},
-      { icon: 'mdi-account-multiple', text: 'Operators'},
+      { icon: 'mdi-account-multiple', text: 'Operators', to: {name: "UploadImage"}},
       { icon: 'mdi-account-multiple', text: 'Patients'},
       { icon: 'mdi-cog', text: 'Settings'},
       { icon: 'mdi-logout', text: 'Logout'},
