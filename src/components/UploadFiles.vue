@@ -30,6 +30,17 @@
         </v-btn>
       </v-col>
     </v-row>
+
+    <v-card v-if="fileInfos.length > 0" class="mx-auto">
+      <v-list>
+        <v-subheader>List of Files</v-subheader>
+        <v-list-item-group color="primary">
+          <v-list-item v-for="(file, index) in fileInfos" :key="index">
+            <a :href="file.url">{{ file.name }}</a>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-card>
   </div>
 </template>
 
@@ -67,7 +78,7 @@ export default {
       })
         .then((response) => {
           this.message = response.data.message;
-          return UploadService.getFiles();
+          return UploadService.getFiles(this.direction);
         })
         .then((files) => {
           this.fileInfos = files.data;
@@ -78,11 +89,23 @@ export default {
           this.currentFile = undefined;
         });
     },
+    clear(){
+      UploadService.clear(this.direction).then((response) =>{
+        console.log("update");
+        return UploadService.getFiles(this.direction);
+      }).then((files) => {
+        
+        this.fileInfos = files.data;
+      });
+    }
   },
   mounted() {
-    UploadService.getFiles().then((response) => {
+    UploadService.getFiles(this.direction).then((response) => {
       this.fileInfos = response.data;
     });
   },
+  created(){
+    
+  }
 };
 </script>
